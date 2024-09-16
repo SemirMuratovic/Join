@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="icon" href="../img/join_logo.svg" />
+    <link rel="stylesheet" href="../css/reset_stylesheet.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style_media_queries.css" />
+    <link rel="stylesheet" href="../css/summary.css" />
+    <link rel="stylesheet" href="../css/summary_media_queries.css" />
+    <script src="../javascript/data_backup_guests.js" defer></script>
+    <script src="../javascript/register.js" defer></script>
+    <script src="../javascript/board_server.js" defer></script>
+    <script src="../javascript/script.js" defer></script>
+    <script src="../javascript/storage.js" defer></script>
+    <script src="../javascript/summary.js" defer></script>
+    <script src="../javascript/board.js" defer></script>
+    <script src="../javascript/board_general.js" defer></script>
+  </head>
+  <body onload="init()">
+    <div id="startScreen_mobile">
+      <span id="greeting_mobile"></span>
+      <span id="greeting_name_mobile"></span>
+    </div>
+    <div id="main">
+    <header>
+      <div w3-include-html="../templates/header.html"></div>
+    </header>
+      <div class="summary-headline">
+        <h1>Join 821</h1>
+        <div class="lightblue-vertical-line"></div>
+        <span>Key Metrics at a Glance</span>
+        <div class="lightblue-underline"></div>
+      </div>
+      <div class="wrapper-div">
+        <div class="summary">
+          <div class="toDo-and-done">
+            <a href="./board.html" class="toDo-div">
+              <div class="toDo-and-done-icon">
+                <img src="../img/edit.svg" class="summary-icon" />
+              </div>
+              <div class="toDo">
+                <div id="toDo_counter" class="counter"></div>
+                <span>To-do</span>
+              </div>
+            </a>
+            <a href="./board.html" class="done-div">
+              <div class="toDo-and-done-icon">
+                <img src="../img/check_big.svg" class="summary-icon" />
+              </div>
+              <div class="done">
+                <div id="done_counter" class="counter"></div>
+                <span>Done</span>
+              </div>
+            </a>
+          </div>
+          <a href="./board.html" class="urgentCounter-and-upcomingDeadline">
+            <div class="urgency-icon">
+              <img src="../img/double_arrow_up.svg" class="summary-icon" />
+            </div>
+            <div class="urgent">
+              <div id="urgent_counter" class="counter"></div>
+              <span>Urgent</span>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="upcoming-deadline">
+              <div id="next_due_date" class="date"></div>
+              <span>Upcoming Deadline</span>
+            </div>
+          </a>
+          <div class="other-boardSummary">
+            <a href="./board.html" class="lower-boardSummary">
+              <div id="tasksInBoard_counter" class="counter"></div>
+              <span>Tasks in</span>
+              <span>Board</span>
+            </a>
+            <a href="./board.html" class="lower-boardSummary">
+              <div id="inProgress_counter" class="counter"></div>
+              <span>Tasks in</span>
+              <span>Progress</span>
+            </a>
+            <a href="./board.html" class="lower-boardSummary">
+              <div id="awaitFeedback_counter" class="counter"></div>
+              <span>Awaiting</span>
+              <span>Feedback</span>
+            </a>
+          </div>
+        </div>
+        <div class="good-morning">
+          <span id="greeting" class="greeting"></span>
+          <span id="greeting_name" class="greeting-name"></span>
+        </div>
+    </div>
+    <nav>
+      <div w3-include-html="../templates/navigation_bar.html"></div>
+    </nav>
+    </div>
+  </body>
+</html>

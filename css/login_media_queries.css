@@ -1,0 +1,157 @@
+/* ---------------------------------------------------
+breakpoint: 50em
+------------------------------------------------------ */
+@media (min-width: 30em) {
+  .login-content h1,
+  .sign-up-content h1 {
+    font-size: 48px;
+  }
+}
+@media (min-width: 50em) {
+  .button-wrapper-log-in,
+  .button-wrapper-sign-up {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .login-content h1,
+  .sign-up-content h1 {
+    font-size: 61px;
+  }
+
+  .blue-line {
+    width: 150px;
+  }
+
+  .button-wrapper-sign-up {
+    width: 100%;
+  }
+
+  .sign-up-wrapper {
+    width: 250px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  }
+
+  .button-wrapper-sign-up {
+    justify-content: center;
+  }
+
+  .button-sign-up {
+    padding: 0.5em 1em;
+    font-size: 1rem;
+  }
+
+  .login-content form {
+    max-width: 600px;
+  }
+
+  .form-content-without-sign-up-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 1em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--accent-color-white);
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    gap: 32px;
+  }
+
+  .remember-user {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .button-login,
+  .button-sign-up {
+    width: 100px;
+  }
+
+  .button-guest-login {
+    width: auto;
+  }
+
+  .login-input-and-button-wrapper {
+    margin: 0.5em 0;
+  }
+
+  .sign-up-wrapper {
+    margin: 0.5em 0 0;
+    gap: 8px;
+  }
+
+  .sign-up-wrapper p {
+    font-size: 1rem;
+  }
+
+  .sign-up-content {
+    padding: 48px 115px;
+  }
+}
+
+@media (height < 50em) {
+  .sign-up-content {
+    max-height: 400px;
+    margin: 0;
+    padding: 32px;
+    gap: 16px;
+  }
+
+  .legal-wrapper {
+    margin-top: 32px;
+  }
+
+  .form-content-without-sign-up-button {
+    padding: 24px 14px;
+  }
+
+  .login-content h1,
+  .sign-up-content h1 {
+    font-size: 32px;
+  }
+
+  .login-input-and-button-wrapper {
+    margin: 0.5em 0;
+    gap: 16px;
+  }
+
+  .button-login,
+  .button-guest-login {
+    font-size: 16px;
+    width: 132px;
+  }
+
+  .button-wrapper-log-in {
+    gap: 16px;
+  }
+
+  input::placeholder {
+    font-size: 16px;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+    font-size: 16px;
+    height: auto;
+  }
+
+  .combined-signup-wrapper {
+    gap: 8px;
+  }
+}
+
+.d-none {
+  display: none;
+}
