@@ -96,7 +96,8 @@ breakpoint: 50em
   }
 
   .sign-up-content {
-    padding: 48px 115px;
+    max-width: 600px;
+    padding: 1em 3em;
   }
 }
 
