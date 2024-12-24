@@ -10,8 +10,6 @@ async function checkUser() {
     userEmail = userEmail.replace(/"/g, "");
     let users = JSON.parse(await getItem("users"));
     let user = users.find((u) => u.email == userEmail).id;
-    console.log(user);
-
     return user;
   }
 }
