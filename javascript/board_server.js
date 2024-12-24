@@ -19,8 +19,11 @@ async function checkUser() {
  */
 async function loadTasksUserOrGuest() {
   let user = await checkUser();
-  if (user) {
+  let currentURL = window.location.href;
+  if (user && currentURL.includes("summary")) {
     tasks = JSON.parse(await getItem(`${user}_tasks`));
+  } else if (user && currentURL.includes("board")) {
+    tasks = JSON.parse(await getItem(`${user.id}_tasks`));
   } else {
     tasks = JSON.parse(await getItem("guestTasks"));
   }
@@ -31,8 +34,11 @@ async function loadTasksUserOrGuest() {
  */
 async function loadContactsUserOrGuest() {
   let user = await checkUser();
-  if (user) {
-    contacts = JSON.parse(await getItem(`${user.email}_contacts`));
+  let currentURL = window.location.href;
+  if (user && currentURL.includes("summary")) {
+    contacts = JSON.parse(await getItem(`${user}_contacts`));
+  } else if (user && currentURL.includes("board" || "add_task")) {
+    contacts = JSON.parse(await getItem(`${user.id}_contacts`));
   } else {
     contacts = JSON.parse(await getItem("guestContacts"));
   }
@@ -43,8 +49,11 @@ async function loadContactsUserOrGuest() {
  */
 async function loadCategoriesUserOrGuest() {
   let user = await checkUser();
-  if (user) {
-    categories = JSON.parse(await getItem(`${user.email}_categories`));
+  let currentURL = window.location.href;
+  if (user && currentURL.includes("summary")) {
+    categories = JSON.parse(await getItem(`${user}_categories`));
+  } else if (user && currentURL.includes("board" || "add_task")) {
+    categories = JSON.parse(await getItem(`${user.id}_categories`));
   } else {
     categories = JSON.parse(await getItem("guestCategories"));
   }
@@ -57,7 +66,7 @@ async function loadCategoriesUserOrGuest() {
 async function sendTasksToServer() {
   let user = await checkUser();
   if (user) {
-    await setItem(`${user.email}_tasks`, JSON.stringify(tasks));
+    await setItem(`${user.id}_tasks`, JSON.stringify(tasks));
   } else {
     await setItem("guestTasks", JSON.stringify(tasks));
   }

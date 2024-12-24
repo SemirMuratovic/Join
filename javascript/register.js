@@ -18,7 +18,6 @@ async function initRegister() {
 async function loadUsers() {
   try {
     users = JSON.parse(await getItem("users"));
-    console.log(users);
   } catch (e) {
     console.error("Loading error:", e);
   }
@@ -104,8 +103,8 @@ async function sendNewDataToServer() {
   let userId = users.find((u) => u.email == email.value).id;
   await setItem("users", JSON.stringify(users));
   await setItem(`${userId}_tasks`, JSON.stringify(exemplaryUserTasks));
-  await setItem(`${userId}_contacts`, JSON.stringify(exemplaryUserTasks));
-  await setItem(`${userId}_categories`, JSON.stringify(exemplaryUserTasks));
+  await setItem(`${userId}_contacts`, JSON.stringify(exemplaryUserContacts));
+  await setItem(`${userId}_categories`, JSON.stringify(exemplaryUserCategories));
 }
 
 /**
