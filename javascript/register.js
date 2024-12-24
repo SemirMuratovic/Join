@@ -35,6 +35,7 @@ async function register() {
       if (notAUser()) {
         registerBtn.disabled = true;
         users.push({
+          id: generateId(),
           name: fullName.value,
           email: email.value,
           password: password.value,
@@ -100,10 +101,13 @@ function notAUser() {
  * Under these keys, their tasks, contacts and categories will be stored in an array in the future
  */
 async function sendNewDataToServer() {
+  let userId = users.find((u) => u.email == email.value).id;
   await setItem("users", JSON.stringify(users));
-  await setItem(`${email.value}_tasks`, exemplaryUserTasks);
-  await setItem(`${email.value}_contacts`, exemplaryUserContacts);
-  await setItem(`${email.value}_categories`, exemplaryUserCategories);
+  await setItem(`${userId}_tasks`, JSON.stringify(exemplaryUserTasks));
+  await setItem(`${userId}_contacts`, JSON.stringify(exemplaryUserTasks));
+  await setItem(`${userId}_categories`, JSON.stringify(exemplaryUserTasks));
+  //   await setItem(`${email.value}_contacts`, JSON.stringify(exemplaryUserContacts));
+  //   await setItem(`${email.value}_categories`, JSON.stringify(exemplaryUserCategories));
 }
 
 /**
@@ -153,4 +157,8 @@ function changePasswordVisibility(id) {
   let enteredPassword = inputField.value;
   inputField.value = "";
   inputField.value = enteredPassword;
+}
+
+function generateId() {
+  return Math.random().toString(36).substr(2, 9);
 }
