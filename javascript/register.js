@@ -106,8 +106,6 @@ async function sendNewDataToServer() {
   await setItem(`${userId}_tasks`, JSON.stringify(exemplaryUserTasks));
   await setItem(`${userId}_contacts`, JSON.stringify(exemplaryUserTasks));
   await setItem(`${userId}_categories`, JSON.stringify(exemplaryUserTasks));
-  //   await setItem(`${email.value}_contacts`, JSON.stringify(exemplaryUserContacts));
-  //   await setItem(`${email.value}_categories`, JSON.stringify(exemplaryUserCategories));
 }
 
 /**
