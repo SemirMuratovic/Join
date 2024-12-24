@@ -11,7 +11,7 @@ async function setItem(key, value) {
   //   const payload = { key, value, token: STORAGE_TOKEN };
   const payload = { key, value };
   return fetch(STORAGE_URL + key + ".json", {
-    method: "POST",
+    method: "PUT",
     header: {
       "Content-Type": "application/json",
     },
@@ -30,8 +30,8 @@ async function getItem(key) {
   return fetch(url)
     .then((res) => res.json())
     .then((res) => {
-      if (res.data) {
-        return res.data;
+      if (res) {
+        return res.value;
       }
       throw "key not found!";
     });
